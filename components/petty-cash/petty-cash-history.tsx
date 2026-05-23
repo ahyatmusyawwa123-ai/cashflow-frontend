@@ -208,7 +208,7 @@ const [selectedRequestId, setSelectedRequestId] =
 const [selectedFile, setSelectedFile] =
   useState<File | null>(null)
   useEffect(() => {
-  fetch("http://127.0.0.1:8000/api/petty-cash")
+  fetch("https://anyone-tinker-electable.ngrok-free.dev/petty-cash")
     .then((res) => res.json())
     .then((data) => {
       setRequests(data)
@@ -265,7 +265,7 @@ const handleUploadProof = async () => {
 
     const response = await fetch(
 
-      `http://127.0.0.1:8000/api/petty-cash/${selectedRequestId}/upload-usage-proof`,
+      `https://anyone-tinker-electable.ngrok-free.dev/petty-cash/${selectedRequestId}/upload-usage-proof`,
 
       {
         method: "POST",
@@ -288,7 +288,7 @@ const handleUploadProof = async () => {
 
     // refresh data
     const refresh = await fetch(
-      "http://127.0.0.1:8000/api/petty-cash"
+      "https://anyone-tinker-electable.ngrok-free.dev/petty-cash"
     )
 
     const refreshData = await refresh.json()

@@ -61,7 +61,7 @@ const handleSaveProfile = async (
   try {
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/update-profile",
+      "https://anyone-tinker-electable.ngrok-free.dev/update-profile",
       {
         method: "PUT",
 

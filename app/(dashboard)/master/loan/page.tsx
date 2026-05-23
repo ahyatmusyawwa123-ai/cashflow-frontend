@@ -133,7 +133,7 @@ const handleToggleStatus = async (id: number) => {
   try {
 
     await fetch(
-      `http://127.0.0.1:8000/api/loan-settings/${id}/toggle`,
+      `hhttps://anyone-tinker-electable.ngrok-free.dev/loan-settings/${id}/toggle`,
       {
         method: "PUT",
       }
@@ -163,8 +163,8 @@ const handleSave = async () => {
 
     await fetch(
   editId
-    ? `http://127.0.0.1:8000/api/loan-settings/${editId}`
-    : "http://127.0.0.1:8000/api/loan-settings",
+    ? `https://anyone-tinker-electable.ngrok-free.dev/loan-settings/${editId}`
+    : "https://anyone-tinker-electable.ngrok-free.dev/loan-settings",
       {
         method: editId ? "PUT" : "POST",
         headers: {

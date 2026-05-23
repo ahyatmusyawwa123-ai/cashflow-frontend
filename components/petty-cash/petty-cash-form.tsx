@@ -54,7 +54,7 @@ export function PettyCashForm({ onSuccess }: Props) {
 
     // Simulate API call
     try {
-  const res = await fetch("http://127.0.0.1:8000/api/petty-cash", {
+  const res = await fetch("https://anyone-tinker-electable.ngrok-free.dev/petty-cash", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

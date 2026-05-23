@@ -30,7 +30,7 @@ export function LoanForm({ onSuccess }: { onSuccess?: () => void }) {
   const [loanSettings, setLoanSettings] = useState<any[]>([]);
   useEffect(() => {
 
-  fetch("http://127.0.0.1:8000/api/loan-settings")
+  fetch("https://anyone-tinker-electable.ngrok-free.dev/loan-settings")
     .then((res) => res.json())
     .then((data) => {
       setLoanSettings(data);
@@ -86,7 +86,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   try {
     setIsSubmitting(true);
 
-    const response = await fetch("http://127.0.0.1:8000/api/petty-cash", {
+    const response = await fetch("https://anyone-tinker-electable.ngrok-free.dev/petty-cash", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

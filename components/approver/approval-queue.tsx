@@ -76,13 +76,13 @@ const [sortOrder, setSortOrder] = useState("desc")
       let url = ""
 
       if (role === "hrd") {
-  url = "http://127.0.0.1:8000/api/approval/hrd"
+  url = "https://anyone-tinker-electable.ngrok-free.dev/approval/hrd"
 } else if (role === "manager") {
-        url = "http://127.0.0.1:8000/api/approval/manager"
+        url = "https://anyone-tinker-electable.ngrok-free.dev/approval/manager"
       } else if (role === "director") {
-        url = "http://127.0.0.1:8000/api/approval/director"
+        url = "https://anyone-tinker-electable.ngrok-free.dev/approval/director"
       } else if (role === "finance") {
-  url = "http://127.0.0.1:8000/api/approval/finance"
+  url = "https://anyone-tinker-electable.ngrok-free.dev/approval/finance"
 }
 
       try {
@@ -166,7 +166,7 @@ const paginatedRequests =
   // ✅ APPROVE
   // ✅ APPROVE
 const handleApprove = async (id: number) => {
-  await fetch(`http://127.0.0.1:8000/api/approval/${role}/${id}`, {
+  await fetch(`https://anyone-tinker-electable.ngrok-free.dev/approval/${role}/${id}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -181,7 +181,7 @@ const handleApprove = async (id: number) => {
   // ✅ REJECT
   // ✅ REJECT
 const handleReject = async (id: number) => {
-  await fetch(`http://127.0.0.1:8000/api/approval/${role}/reject/${id}`, {
+  await fetch(`https://anyone-tinker-electable.ngrok-free.dev/approval/${role}/reject/${id}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
