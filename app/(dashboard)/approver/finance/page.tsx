@@ -51,7 +51,7 @@ const [openUploadId, setOpenUploadId] = useState<number | null>(null);
   // 🔥 FETCH DATA BACKEND
 const fetchData = async () => {
   const res = await fetch(
-    "http://127.0.0.1:8000/api/approval/finance"
+    "https://anyone-tinker-electable.ngrok-free.dev/api/approval/finance"
   );
 
   const result = await res.json();
@@ -123,7 +123,7 @@ if (!id) {
     );
 
 await fetch(
-  `http://127.0.0.1:8000/api/approval/finance/${id}`,
+  `https://anyone-tinker-electable.ngrok-free.dev/api/approval/finance/${id}`,
       {
         method: "POST",
         body: formData,

@@ -35,7 +35,7 @@ const [openModal, setOpenModal] = useState(false);
 const fetchSettings = async () => {
 
   const res = await fetch(
-    "http://127.0.0.1:8000/api/loan-settings"
+    "https://anyone-tinker-electable.ngrok-free.dev/api/loan-settings"
   );
 
   const data = await res.json();
@@ -108,7 +108,7 @@ const handleDelete = async (id: number) => {
   try {
 
     await fetch(
-      `http://127.0.0.1:8000/api/loan-settings/${id}`,
+      `https://anyone-tinker-electable.ngrok-free.dev/api/loan-settings/${id}`,
       {
         method: "DELETE",
       }
