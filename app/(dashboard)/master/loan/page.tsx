@@ -133,7 +133,7 @@ const handleToggleStatus = async (id: number) => {
   try {
 
     await fetch(
-      `hhttps://anyone-tinker-electable.ngrok-free.dev/loan-settings/${id}/toggle`,
+      `https://anyone-tinker-electable.ngrok-free.dev/loan-settings/${id}/toggle`,
       {
         method: "PUT",
       }

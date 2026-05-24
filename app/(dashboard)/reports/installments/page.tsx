@@ -871,7 +871,7 @@ const hasOverdue = loanInstallments.some(
 
                         const refreshed =
                           await fetch(
-                            "https://anyone-tinker-electable.ngrok-free.dev/installments"
+                            "https://anyone-tinker-electable.ngrok-free.dev/api/installments"
                           ).then((res) => res.json())
 
                         setData(refreshed)

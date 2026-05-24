@@ -125,7 +125,7 @@ const [monthFilter, setMonthFilter] = useState("all")
 const [yearFilter, setYearFilter] = useState("all")
 const [sortOrder, setSortOrder] = useState("desc")
 useEffect(() => {
-  fetch("https://anyone-tinker-electable.ngrok-free.dev/petty-cash-report")
+  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash-report")
     .then((res) => res.json())
     .then((data) => {
       setRequests(data)

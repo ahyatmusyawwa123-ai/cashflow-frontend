@@ -77,7 +77,7 @@ const [monthFilter, setMonthFilter] = useState("all")
 const [yearFilter, setYearFilter] = useState("all")
 const [sortOrder, setSortOrder] = useState("desc")
   useEffect(() => {
-  fetch("https://anyone-tinker-electable.ngrok-free.dev/loan-report")
+  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/loan-report")
     .then((res) => res.json())
     .then((data) => {
       setLoanData(data)
