@@ -134,17 +134,23 @@ export function LoanHistory() {
   const [searchQuery, setSearchQuery] = useState("")
   const [loanRequests, setLoanRequests] = useState<any[]>([])
 useEffect(() => {
-  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash")
+
+  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/loan-report")
+
     .then((res) => res.json())
+
     .then((data) => {
 
-      const loans = data.filter(
-        (item: any) =>
-          item.tenor
-      )
+      console.log("LOAN DATA =", data)
 
-      setLoanRequests(loans)
+      setLoanRequests(data)
+
     })
+
+    .catch((err) => {
+      console.error(err)
+    })
+
 }, [])
 const [statusFilter, setStatusFilter] = useState<string>("all")
 const [currentPage, setCurrentPage] = useState(1)

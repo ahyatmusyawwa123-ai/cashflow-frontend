@@ -77,13 +77,22 @@ const [monthFilter, setMonthFilter] = useState("all")
 const [yearFilter, setYearFilter] = useState("all")
 const [sortOrder, setSortOrder] = useState("desc")
   useEffect(() => {
-  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/loan-report")
+  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash")
     .then((res) => res.json())
     .then((data) => {
-      setLoanData(data)
-    })
+
+  const loans = data.filter(
+    (item: any) =>
+      item.tenor &&
+      Number(item.tenor) > 0
+  )
+
+  setLoanData(loans)
+
+})
     .catch((err) => console.error(err))
 }, [])
+
 const handleExportExcel = () => {
   const exportData = filteredLoans.map((loan) => ({
     Employee: loan.employee_name,
@@ -489,7 +498,7 @@ const paginatedLoans =
           : loan.status === "approved_manager"
           ? "bg-blue-100 text-blue-700"
 
-          : loan.status === "submitten"
+          : loan.status === "submitted"
           ? "bg-purple-100 text-purple-700"
 
           : "bg-slate-100 text-slate-700"
