@@ -125,16 +125,20 @@ const [monthFilter, setMonthFilter] = useState("all")
 const [yearFilter, setYearFilter] = useState("all")
 const [sortOrder, setSortOrder] = useState("desc")
 useEffect(() => {
-  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash-report")
+  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash-report", {
+    headers: {
+      "ngrok-skip-browser-warning": "true",
+    },
+  })
     .then((res) => res.json())
     .then((data) => {
+      console.log("DATA =", data)
       setRequests(data)
 
-      // MONTHLY CHART
       const grouped = data.reduce((acc: any, item: any) => {
         const month = new Date(item.request_date).toLocaleString("default", {
-  month: "short",
-})
+          month: "short",
+        })
 
         if (!acc[month]) {
           acc[month] = 0
@@ -151,6 +155,9 @@ useEffect(() => {
       }))
 
       setMonthlyData(formatted)
+    })
+    .catch((err) => {
+      console.log("FETCH ERROR =", err)
     })
 }, [])
 
