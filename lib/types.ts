@@ -5,7 +5,7 @@ export type ApprovalStatus =
   | "approved_hrd"
   | "approved_manager"
   | "approved_director"
-  | "ready_for_finance"
+  | "ready_finance"
   | "disbursed"
   | "paid"
   | "completed"
@@ -72,7 +72,7 @@ export const APPROVAL_STEPS = [
   { key: "approved_hrd", label: "HRD" },
   { key: "approved_manager", label: "Manager" },
   { key: "approved_director", label: "Director" },
-  { key: "ready_for_finance", label: "Finance" },
+  { key: "ready_finance", label: "Finance" },
   { key: "disbursed", label: "Done" },
 ] as const
 
@@ -82,7 +82,7 @@ export function getRequiredSteps(amount: number): typeof APPROVAL_STEPS {
     return [
       { key: "submitted", label: "Submitted" },
       { key: "approved_hrd", label: "HRD" },
-      { key: "ready_for_finance", label: "Finance" },
+      { key: "ready_finance", label: "Finance" },
       { key: "disbursed", label: "Done" },
     ] as unknown as typeof APPROVAL_STEPS
   } else if (amount <= 10_000_000) {
@@ -91,7 +91,7 @@ export function getRequiredSteps(amount: number): typeof APPROVAL_STEPS {
       { key: "submitted", label: "Submitted" },
       { key: "approved_hrd", label: "HRD" },
       { key: "approved_manager", label: "Manager" },
-      { key: "ready_for_finance", label: "Finance" },
+      { key: "ready_finance", label: "Finance" },
       { key: "disbursed", label: "Done" },
     ] as unknown as typeof APPROVAL_STEPS
   } else {
@@ -114,7 +114,7 @@ export function getStatusColor(status: ApprovalStatus): string {
     case "approved_director":
       return "bg-blue-100 text-blue-700"
 
-    case "ready_for_finance":
+    case "ready_finance":
       return "bg-purple-100 text-purple-700"
 
     case "disbursed":

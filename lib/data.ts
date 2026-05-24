@@ -76,7 +76,7 @@ export const pettyCashRequests: PettyCashRequest[] = [
     amount: 3_500_000,
     date: "2026-04-21",
     description: "Books and online course subscriptions",
-    status: "ready_for_finance",
+    status: "ready_finance",
     currentStep: 4,
     totalSteps: 5,
     proofUrl: "/receipts/pc-005.pdf",
@@ -293,7 +293,7 @@ export function getApprovalStatusData() {
       r.status === "approved_hrd" ||
       r.status === "approved_manager" ||
       r.status === "approved_director" ||
-      r.status === "ready_for_finance"
+      r.status === "ready_finance"
   ).length
   const approved = allRequests.filter((r) => r.status === "disbursed").length
   const rejected = allRequests.filter((r) => r.status === "rejected").length

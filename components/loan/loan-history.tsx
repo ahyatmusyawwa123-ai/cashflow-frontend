@@ -46,7 +46,7 @@ function getStatusLabel(status: string): string {
     approved_hrd: "HRD Approved",
     approved_manager: "Manager Approved",
     approved_director: "Director Approved",
-    ready_for_finance: "Ready for Finance",
+    ready_finance: "Ready for Finance",
     disbursed: "Disbursed",
     rejected: "Rejected",
   }
@@ -137,9 +137,11 @@ export function LoanHistory() {
   fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash")
     .then((res) => res.json())
     .then((data) => {
-      const loans = data.filter(
-        (item: any) => item.type === "loan"
-      )
+const loans = data.filter(
+  (item: any) =>
+    item.type &&
+    item.type.toLowerCase() === "loan"
+)
 
       setLoanRequests(loans)
     })

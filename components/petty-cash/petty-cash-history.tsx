@@ -358,7 +358,7 @@ const refresh = await fetch(
               <SelectItem value="approved_hrd">HRD Approved</SelectItem>
               <SelectItem value="approved_manager">Manager Approved</SelectItem>
               <SelectItem value="approved_director">Director Approved</SelectItem>
-              <SelectItem value="ready_for_finance">Ready for Finance</SelectItem>
+              <SelectItem value="ready_finance">Ready for Finance</SelectItem>
               <SelectItem value="disbursed">Disbursed</SelectItem>
               <SelectItem value="rejected">Rejected</SelectItem>
             </SelectContent>
