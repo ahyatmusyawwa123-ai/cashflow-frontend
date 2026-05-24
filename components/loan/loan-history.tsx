@@ -134,7 +134,7 @@ export function LoanHistory() {
   const [searchQuery, setSearchQuery] = useState("")
   const [loanRequests, setLoanRequests] = useState<any[]>([])
   useEffect(() => {
-  fetch("https://anyone-tinker-electable.ngrok-free.dev/petty-cash")
+  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash")
     .then((res) => res.json())
     .then((data) => {
       const loans = data.filter(
