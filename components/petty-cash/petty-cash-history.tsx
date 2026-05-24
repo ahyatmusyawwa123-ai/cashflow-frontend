@@ -47,7 +47,7 @@ function getStatusLabel(status: string): string {
     approved_hrd: "HRD Approved",
     approved_manager: "Manager Approved",
     approved_director: "Director Approved",
-    ready_for_finance: "Ready for Finance",
+    ready_finance: "Ready for Finance",
     disbursed: "Disbursed",
     rejected: "Rejected",
   }
@@ -221,7 +221,7 @@ const matchesSearch =
     .toLowerCase()
     .includes(searchQuery.toLowerCase()) ||
 
-  (request.userName || "")
+  (request.employee_name || "")
     .toLowerCase()
     .includes(searchQuery.toLowerCase())
 
@@ -388,7 +388,7 @@ const handleUploadProof = async () => {
                           {request.title}
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          {request.userName}
+                          {request.employee_name}
                         </p>
                       </div>
                     </TableCell>
