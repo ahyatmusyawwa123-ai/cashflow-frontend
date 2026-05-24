@@ -577,7 +577,7 @@ const exportToPDF = () => {
                         {getStatusLabel(request.status)}
                       </Badge>
                     </TableCell>
-                    <TableCell>
+                    
 <TableCell>
   <div className="w-32">
     <div className="w-full bg-gray-200 rounded-full h-2">
@@ -604,7 +604,6 @@ const exportToPDF = () => {
   </div>
 </TableCell>
 
-</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
