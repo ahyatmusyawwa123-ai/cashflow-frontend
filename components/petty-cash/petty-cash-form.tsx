@@ -56,9 +56,10 @@ export function PettyCashForm({ onSuccess }: Props) {
     try {
   const res = await fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+headers: {
+  "Content-Type": "application/json",
+  "ngrok-skip-browser-warning": "true",
+},
     body: JSON.stringify({
       user_id: localStorage.getItem("user_id"),
       title,

@@ -207,11 +207,22 @@ const [selectedRequestId, setSelectedRequestId] =
 
 const [selectedFile, setSelectedFile] =
   useState<File | null>(null)
-  useEffect(() => {
-  fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash")
+useEffect(() => {
+  fetch(
+    "https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash",
+    {
+      headers: {
+        "ngrok-skip-browser-warning": "true",
+      },
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
+      console.log("PETTY CASH DATA =", data)
       setRequests(data)
+    })
+    .catch((err) => {
+      console.log("FETCH ERROR =", err)
     })
 }, [])
 const filteredRequests = requests.filter((request) => {
@@ -287,10 +298,14 @@ const handleUploadProof = async () => {
     )
 
     // refresh data
-    const refresh = await fetch(
-      "https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash"
-    )
-
+const refresh = await fetch(
+  "https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash",
+  {
+    headers: {
+      "ngrok-skip-browser-warning": "true",
+    },
+  }
+)
     const refreshData = await refresh.json()
 
     setRequests(refreshData)
