@@ -133,15 +133,15 @@ function LoanDetailModal({ loan }: { loan: LoanRequest }) {
 export function LoanHistory() {
   const [searchQuery, setSearchQuery] = useState("")
   const [loanRequests, setLoanRequests] = useState<any[]>([])
-  useEffect(() => {
+useEffect(() => {
   fetch("https://anyone-tinker-electable.ngrok-free.dev/api/petty-cash")
     .then((res) => res.json())
     .then((data) => {
-const loans = data.filter(
-  (item: any) =>
-    item.type &&
-    item.type.toLowerCase() === "loan"
-)
+
+      const loans = data.filter(
+        (item: any) =>
+          item.tenor
+      )
 
       setLoanRequests(loans)
     })
@@ -158,7 +158,7 @@ const filteredLoans = loanRequests.filter((loan) => {
       .toLowerCase()
       .includes(searchQuery.toLowerCase()) ||
 
-    (loan.userName || "")
+    (loan.employee_name || "")
       .toLowerCase()
       .includes(searchQuery.toLowerCase())
 
@@ -252,7 +252,7 @@ const paginatedLoans =
                       <div>
                         <p className="font-medium text-foreground">{loan.title}</p>
                         <p className="text-xs text-muted-foreground">
-                          {loan.userName}
+                          {loan.employee_name}
                         </p>
                       </div>
                     </TableCell>
